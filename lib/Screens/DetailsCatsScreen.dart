@@ -1,17 +1,19 @@
+import 'package:cats/Models/CatsDetailsModel.dart';
 import 'package:flutter/material.dart';
 
 class DetailsCatsScreen extends StatelessWidget {
-  const DetailsCatsScreen({super.key});
+  const DetailsCatsScreen({super.key, required this.ncat});
+  final CatsDetailsModel  ncat;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Center(child: Text("Cat Name"),),),
+        appBar: AppBar(title: Center(child: Text(ncat.name),),),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              child: Image.network("https://th.bing.com/th/id/R.53cdeef8c630108192b4d04923d23339?rik=nWcdq9wvtDw%2f6A&pid=ImgRaw&r=0",
+              child: Image.network(ncat.imageLink,
               ),
             ),
             Text("data",
@@ -20,11 +22,11 @@ class DetailsCatsScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             ),
-            Text("data"),
-            Text("data"),
-            Text("data"),
-            Text("data"),
-            Text("data"),
+            Text("Origin : ${ncat.origin}"),
+            Text("Max Weight : ${ncat.minWeight}"),
+            Text("Min Weight : ${ncat.minWeight}"),
+            Text("Length : ${ncat.length}"),
+            Text("Intelligence : ${ncat.intelligence}"),
 
           ],
         ),
