@@ -1,12 +1,11 @@
+import 'package:cats/Constant/ListOfCats.dart';
 import 'package:cats/Models/CatsModel.dart';
 import 'package:cats/Widgets/CatCardWidget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({super.key});
-  List<CatsModel> cat = [
-    CatsModel(catImage: "https://th.bing.com/th/id/R.53cdeef8c630108192b4d04923d23339?rik=nWcdq9wvtDw%2f6A&pid=ImgRaw&r=0", catName: "cat one"),
-  ];
+  HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +23,8 @@ class HomeScreen extends StatelessWidget {
         children: [
           ListView.builder(
             itemCount: cat.length,
-            itemBuilder: (context, index) => CatCardWidget(cats: cat[index]),),
+            itemBuilder: (context, index) => CatCardWidget(cats: cat[index]),
+          ),
         ],
       ),
     );
